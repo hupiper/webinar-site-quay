@@ -3,6 +3,7 @@ kind: Application
 metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: quay.io/hupiper/webinar:^0.1
+    argocd-image-updater.argoproj.io/write-back-method: git
   name: webinar-site
   namespace: webinar-site
 spec:
