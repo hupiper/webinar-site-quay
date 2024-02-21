@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: quay.io/hupiper/webinar:^0.1
+  name: webinar-site
+  namespace: webinar-site
+spec:
+  destination:
+    namespace: webinar-site
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: apps/webinar-site-quay/overlays/webinar-site
+    repoURL: https://github.com/hupiper/webinar-site-quay
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true

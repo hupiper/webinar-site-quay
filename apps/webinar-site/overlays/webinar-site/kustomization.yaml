@@ -1,0 +1,4 @@
+namespace: webinar-site
+resources:
+- ../../base
+- webinar-site-ns.yaml

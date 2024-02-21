@@ -1,0 +1,5 @@
+namespace: webinar-site
+resources:
+- webinar-site-service.yaml
+- webinar-site-deployment.yaml
+- webinar-site-route.yaml
