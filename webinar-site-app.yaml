@@ -12,7 +12,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: apps/webinar-site-quay/overlays/webinar-site
+    path: apps/webinar-site/overlays/webinar-site
     repoURL: https://github.com/hupiper/webinar-site-quay
     targetRevision: main
   syncPolicy:
