@@ -2,10 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: quay.io/hupiper/webinar:^0.1
+    argocd-image-updater.argoproj.io/image-list: quay.io/hupiper/webinar^1.0
     argocd-image-updater.argoproj.io/write-back-method: git
   name: webinar-site
-  namespace: webinar-site
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: webinar-site
@@ -16,6 +16,9 @@ spec:
     repoURL: https://github.com/hupiper/webinar-site-quay
     targetRevision: main
   syncPolicy:
+    managedNamespaceMetadata:
+      labels:
+        argocd.argoproj.io/managed-by: openshift-gitops
     automated:
       prune: true
       selfHeal: false
