@@ -15,7 +15,7 @@ spec:
         app: webinar-site
     spec:
       containers:
-        - image: quay.io/hupiper/webinar:v1.0
+        - image: quay.io/hupiper/webinar:1.0
           imagePullPolicy: Always
           name: webinar-site
           ports:
